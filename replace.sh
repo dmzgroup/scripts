@@ -1,3 +1,3 @@
 #!/bin/sh
-find . \( -name '*.cpp' -o -name '*.h' \) | xargs sed -i -e s/$1/$2/g
-find . -name \*-e | xargs rm
+find . \( -name '*.cpp' -o -name '*.h' -o -name '*.lmk' \) | xargs sed -i .sed-replace s/$1/$2/g
+find . -name \*.sed-replace | xargs rm
