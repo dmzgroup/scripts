@@ -16,7 +16,7 @@ else
 fi
 
 if [ "$DMZ_DEBUG" = "true" ] ; then
-   export RUN_DEBUG=$DEBUG_EXE
+   export RUN_DEBUG="$DEBUG_EXE"
 else
    export RUN_DEBUG=""
 fi
