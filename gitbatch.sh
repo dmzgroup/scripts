@@ -1,7 +1,7 @@
 #!/bin/sh
 if [ ! "$1" = "" ] ; then
 
-   while [ "`pwd`" != "/" -o "$GITREPO" = "" ] ; do
+   while [ "`pwd`" != "/" -a "$GITREPO" = "" ] ; do
 
        if [ -d ./lmkproject ] ; then
 
