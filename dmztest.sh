@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# I would rather use pushd/popd but I can't tell if they are always available.
 STARTDIR=`pwd`
 
 for arg in $* ; do
@@ -20,12 +21,11 @@ if [ "$DMZBINMODE" = "" ] ; then
 fi
 
 if [ `uname` = "Darwin" ] ; then
-   export DMZPLATFORM="macos"
+   DMZPLATFORM="macos"
 elif [ `uname` = "Linux" ] ; then
-   export DMZPLATFORM="linux"
-   export LD_LIBRARY_PATH=../../bin/linux-$DMZBINMODE:$LD_LIBRARY_PATH
+   DMZPLATFORM="linux"
 elif [ `uname -o` = "Cygwin" ] ; then
-   export DMZPLATFORM="win32"
+   DMZPLATFORM="win32"
 else
    echo "Unsupported platform: " `uname`
    exit -1 ;
@@ -34,9 +34,10 @@ fi
 while [ "`pwd`" != "/" -a "$DMZBIN" = "" ] ; do
    if [ -d ./bin/$DMZPLATFORM-$DMZBINMODE ] ; then
       DEPPATH=`pwd`/depend
-      pushd ./bin/$DMZPLATFORM-$DMZBINMODE > /dev/null
+      PREVDIR=`pwd`
+      cd ./bin/$DMZPLATFORM-$DMZBINMODE
       DMZBINPATH=`pwd`
-      popd > /dev/null
+      cd $PREVDIR
    fi
    cd ..
 done
