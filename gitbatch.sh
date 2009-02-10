@@ -33,7 +33,7 @@ if [ ! "$1" = "" ] ; then
       done
    else
 
-      echo "Git repro not found."
+      echo "Git repositories not found."
 
    fi
 fi
