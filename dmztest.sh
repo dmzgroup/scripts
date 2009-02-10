@@ -31,8 +31,13 @@ else
    exit -1 ;
 fi
 
-while [ "`pwd`" != "/" -a "$DMZBIN" = "" ] ; do
-   if [ -d ./bin/$DMZPLATFORM-$DMZBINMODE ] ; then
+while [ "`pwd`" != "/" -a "$DMZBINPATH" = "" ] ; do
+   if [ -d ./lmkproject ] ; then
+      if [ ! -d ./bin/$DMZPLATFORM-$DMZBINMODE ] ; then
+         echo "Path: ./bin/$DMZPLATFORM-$DMZBINMODE does not exist, attempting to create."
+         # this should create the bin directory if it doesn't exist.
+         lmk -m $DMZBINMODE -b .
+      fi
       DEPPATH=`pwd`/depend
       PREVDIR=`pwd`
       cd ./bin/$DMZPLATFORM-$DMZBINMODE
@@ -49,7 +54,7 @@ elif [ "$DMZPLATFORM" = "linux" ] ; then
 elif [ "$DMZPLATFORM" = "win32" ] ; then
    echo "win32" 
 else
-   echo "Unknown platform type: $DMPLATFORM"
+   echo "Unknown platform type: $DMZPLATFORM"
    exit -1 ;
 fi
 
