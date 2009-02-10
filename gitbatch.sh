@@ -17,7 +17,7 @@ if [ ! "$1" = "" ] ; then
 
    if [ "$GITREPO" != "" ] ; then
 
-      echo "Git repro found in $GITREPO"
+      echo "Git repositories found in $GITREPO"
       echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-"
 
       DIRS="`/bin/ls -1 $GITREPO`"
