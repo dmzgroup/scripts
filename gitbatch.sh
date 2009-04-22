@@ -25,6 +25,8 @@ if [ ! "$1" = "" ] ; then
       for dir in $DIRS ; do
 
          if [ -d $GITREPO/$dir/.git ] ; then
+foo=git "$@"
+echo "$foo"
             echo "$dir -> git $@"
             cd $GITREPO/$dir ; git "$@"
             echo
