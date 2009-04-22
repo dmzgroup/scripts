@@ -1,5 +1,4 @@
 #!/bin/sh
-set -v
 if [ ! "$1" = "" ] ; then
 
    while [ "`pwd`" != "/" -a "$GITREPO" = "" ] ; do
@@ -26,8 +25,8 @@ if [ ! "$1" = "" ] ; then
       for dir in $DIRS ; do
 
          if [ -d $GITREPO/$dir/.git ] ; then
-            echo "$dir -> git $@"
-            cd $GITREPO/$dir ; git "$@"
+            echo "$dir -> git $*"
+            cd $GITREPO/$dir ; git $*
             echo
          fi
 
