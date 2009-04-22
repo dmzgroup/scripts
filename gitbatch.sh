@@ -1,5 +1,5 @@
 #!/bin/sh
-set -x
+set -v
 if [ ! "$1" = "" ] ; then
 
    while [ "`pwd`" != "/" -a "$GITREPO" = "" ] ; do
