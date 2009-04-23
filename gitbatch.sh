@@ -26,7 +26,7 @@ if [ ! "$1" = "" ] ; then
 
          if [ -d $GITREPO/$dir/.git ] ; then
             echo "$dir -> git $1"
-            cd $GITREPO/$dir ; git $@
+            cd $GITREPO/$dir ; git "$@"
             echo
          fi
 
