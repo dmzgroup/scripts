@@ -14,11 +14,11 @@ if [ "$DMZ_ROOT" = "" -a -d "$HOME/cm/" ] ; then
    DMZ_ROOT="$HOME/cm"
 fi
 
-if [ "$DMZ_ROOT" = ""] ; then
+if [ "$DMZ_ROOT" = "" ] ; then
    echo "Unable to locate the DMZ root directory"
    exit -1
 else
-   echo "Running from: $DMZ_ROOT"
+   echo "DMZ Root: $DMZ_ROOT"
    echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
    cd $START_DIR
 fi
@@ -40,7 +40,7 @@ elif [ `uname -o` = "Cygwin" ] ; then
    export DEBUG_EXE="devenv /debugexe "
 else
    echo "Unsupported platform: " `uname`
-   exit -1 ;
+   exit -1
 fi
 
 if [ "$DMZ_DEBUG" = "true" ] ; then
