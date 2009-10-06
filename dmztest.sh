@@ -60,4 +60,4 @@ fi
 
 cd $STARTDIR
 
-lmk -f test $*
+lmk -v -f test $*
