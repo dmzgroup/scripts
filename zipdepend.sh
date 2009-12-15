@@ -2,8 +2,11 @@
 
 PLATFORM="unknown"
 
+EXTRA_EXCLUDE=""
+
 if [ `uname` = "Darwin" ] ; then
    PLATFORM="mac"
+   EXTRA_EXCLUDE="*/lmk/global.lua"
 elif [ `uname` = "Linux" ] ; then
    PLATFORM="linux"
 elif [ `uname -o` = "Cygwin" ] ; then
@@ -13,4 +16,4 @@ else
    exit -1
 fi
 
-zip -r -y -9 depend-$PLATFORM-`date +%y%m%d`.zip ./depend -x \*.DS_Store
+zip -r -y -9 depend-$PLATFORM-`date +%y%m%d`.zip ./depend -x \*.DS_Store \*.svn\* $EXTRA_EXCLUDE
