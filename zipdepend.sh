@@ -5,8 +5,7 @@ PLATFORM="unknown"
 EXTRA_EXCLUDE=""
 
 if [ `uname` = "Darwin" ] ; then
-   PLATFORM="mac"
-   EXTRA_EXCLUDE="*/lmk/global.lua"
+   PLATFORM="macos"
 elif [ `uname` = "Linux" ] ; then
    PLATFORM="linux"
 elif [ `uname -o` = "Cygwin" ] ; then

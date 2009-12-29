@@ -28,7 +28,7 @@ if [ "$DMZ_BIN_MODE" = "" ] ; then
 fi
 
 if [ `uname` = "Darwin" ] ; then
-   export DYLD_LIBRARY_PATH=$DMZ_ROOT/bin/macos-$DMZ_BIN_MODE:$DMZ_ROOT/depend/osg/lib:$DMZ_ROOT/depend/v8/lib:$DYLD_LIBRARY_PATH
+   export DYLD_LIBRARY_PATH=$DMZ_ROOT/bin/macos-$DMZ_BIN_MODE:$DMZ_ROOT/depend/Qt:$DMZ_ROOT/depend/osg/lib:$DMZ_ROOT/depend/v8/lib:$DYLD_LIBRARY_PATH
    export BIN_HOME=$DMZ_ROOT/bin/macos-$DMZ_BIN_MODE ;
    export DEBUG_EXE="gdb --args "
 elif [ `uname` = "Linux" ] ; then
