@@ -36,6 +36,11 @@ elif [ `uname` = "Linux" ] ; then
    export BIN_HOME=$DMZ_ROOT/bin/linux-$DMZ_BIN_MODE ;
    export DEBUG_EXE="gdb --args "
 elif [ `uname -o` = "Cygwin" ] ; then
+   if [ "$PATH" = "" ] ; then
+      export PATH=$DMZ_ROOT/depend/bin
+   else
+      export PATH=$DMZ_ROOT/depend/bin:$PATH
+   fi
    export BIN_HOME=`cygpath -w $DMZ_ROOT/bin/win32-$DMZ_BIN_MODE` ;
    export DEBUG_EXE="devenv /debugexe "
 else
