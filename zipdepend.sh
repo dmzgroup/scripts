@@ -21,6 +21,8 @@ if [ "$PLATFORM" = "" ] ; then
 
 fi
 
-echo $PLATFORM
+FILENAME="depend-$PLATFORM-`date +%y%m%d`.zip"
 
-zip -r -y -9 depend-$PLATFORM-`date +%y%m%d`.zip ./depend -x \*.DS_Store \*.svn\* \*.swp $EXTRA_EXCLUDE
+echo $FILENAME
+
+zip -r -y -9 $FILENAME ./depend -x \*.DS_Store \*.svn\* \*.swp $EXTRA_EXCLUDE
