@@ -23,6 +23,8 @@ else
    cd $START_DIR
 fi
 
+export QT_PLUGIN_PATH="$DMZ_ROOT/depend/Qt"
+
 if [ "$DMZ_BIN_MODE" = "" ] ; then
    DMZ_BIN_MODE="debug"
 fi
