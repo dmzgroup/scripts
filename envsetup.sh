@@ -20,7 +20,7 @@ if [ "$DMZ_ROOT" = "" ] ; then
 else
    echo "DMZ Root: $DMZ_ROOT"
    echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
-   cd $START_DIR
+   cd "$START_DIR"
 fi
 
 export QT_PLUGIN_PATH="$DMZ_ROOT/depend/Qt"
@@ -55,3 +55,5 @@ if [ "$DMZ_DEBUG" = "true" ] ; then
 else
    export RUN_DEBUG=""
 fi
+
+export DMZ_BIN_PATH=$RUN_DEBUG$BIN_HOME
