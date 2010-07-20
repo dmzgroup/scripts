@@ -31,7 +31,7 @@ if [ "$GITREPO" != "" ] ; then
 
       if [ -d $dir/.git ] ; then
          echo "$dir"
-         find $dir \( -name '*.cpp' -o -name '*.h' -o -name '*.lmk' -o -name '*.xml' -o -name '*.lua' -o -name '*.js' -o -name '*.' \) >> dmz.files
+         find $dir \( -name '*.cpp' -o -name '*.h' -o -name '*.lmk' -o -name '*.xml' -o -name '*.lua' -o -name '*.js' -o -name '*.ui' -o -name '*.qrc' \) >> dmz.files
       fi
 
    done
