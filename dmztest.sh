@@ -48,7 +48,7 @@ while [ "`pwd`" != "/" -a "$DMZBINPATH" = "" ] ; do
 done
 
 if [ "$DMZPLATFORM" = "macos" ] ; then
-   export DYLD_LIBRARY_PATH=$DMZBINPATH:$DEPPATH/osg/lib:$DYLD_LIBRARY_PATH
+   export DYLD_LIBRARY_PATH=$DMZBINPATH:$DEPPATH/v8/lib:$DEPPATH/osg/lib:$DYLD_LIBRARY_PATH
 elif [ "$DMZPLATFORM" = "linux" ] ; then
    export LD_LIBRARY_PATH=$DMZBINPATH:$LD_LIBRARY_PATH
 elif [ "$DMZPLATFORM" = "win32" ] ; then
