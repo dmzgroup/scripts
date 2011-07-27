@@ -23,7 +23,7 @@ if [ "$GITREPO" != "" ] ; then
    for dir in $DIRS ; do
 
       if [ -d $dir/.git ] ; then
-         find $dir \( -name '*.cpp' -o -name '*.h' -o -name '*.lmk' -o -name '*.xml' -o -name '*.lua' -o -name '*.js' -o -name '*.ui' -o -name '*.qrc' \)
+         find $dir \( -name '*.cpp' -o -name '*.h' -o -name '*.lmk' -o -name '*.xml' -o -name '*.lua' -o -name '*.js' -o -name '*.ui' -o -name '*.qrc' -o -name '*.png' -o -name '*.sh' \)
       fi
 
    done
